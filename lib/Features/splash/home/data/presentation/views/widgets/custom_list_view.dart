@@ -9,11 +9,8 @@ class ViewInRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: Container(
-        padding: const EdgeInsets.only(
-          top: 8,
-        ),
+      padding: const EdgeInsets.only(bottom: 30, top: 8),
+      child: SizedBox(
         height: 240,
         child: SizedBox(
           height: 240,
@@ -24,8 +21,8 @@ class ViewInRow extends StatelessWidget {
             itemBuilder: (context, index) {
               return Row(
                 children: [
-                  const SizedBox(
-                    width: 16,
+                  SizedBox(
+                    width: index == 0 ? 0 : 16,
                   ),
                   ShowPoster(
                     Imageurl: Assets.test_image,
@@ -41,7 +38,6 @@ class ViewInRow extends StatelessWidget {
     );
   }
 }
-
 
 class ShowPoster extends StatelessWidget {
   ShowPoster({
