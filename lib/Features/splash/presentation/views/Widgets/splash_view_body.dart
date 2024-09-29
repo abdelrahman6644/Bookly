@@ -1,45 +1,48 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:bookly_app/Features/splash/home/data/presentation/views/home_view.dart';
+import 'package:bookly_app/Features/splash/presentation/views/Widgets/animated_text.dart';
+import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utls/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    navigateToHome();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTranstionDuration);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Image(
+        Image(
           image: AssetImage(
             Assets.logo,
           ),
         ),
-        Center(
-          child: SizedBox(
-            height: 30,
-            child: DefaultTextStyle(
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.blueAccent,
-                shadows: [
-                  Shadow(
-                    blurRadius: 7.0,
-                    color: Colors.blueGrey,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-              ),
-              child: AnimatedTextKit(
-                repeatForever: true,
-                animatedTexts: [
-                  FlickerAnimatedText('Read Free Books'),
-                ],
-              ),
-            ),
-          ),
-        )
+        animatedText(
+          text: 'Read Free Books',
+        ),
       ],
     );
   }
