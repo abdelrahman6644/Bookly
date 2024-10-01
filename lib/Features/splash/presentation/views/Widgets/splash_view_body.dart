@@ -1,11 +1,9 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bookly_app/Features/splash/home/data/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/Widgets/animated_text.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utls/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});

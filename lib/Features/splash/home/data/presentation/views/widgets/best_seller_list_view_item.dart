@@ -1,8 +1,5 @@
 import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/best_seller_item.dart';
-import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/custom_list_view.dart';
-import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/price_and_rating_book.dart';
 import 'package:bookly_app/constant.dart';
-import 'package:bookly_app/core/utls/assets.dart';
 import 'package:bookly_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
