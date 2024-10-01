@@ -16,18 +16,19 @@ class ViewInRow extends StatelessWidget {
           height: 240,
           width: MediaQuery.of(context).size.width,
           child: ListView.builder(
+            padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
             itemCount: 6,
             itemBuilder: (context, index) {
               return Row(
                 children: [
-                  SizedBox(
-                    width: index == 0 ? 0 : 16,
-                  ),
-                  ShowPoster(
-                    Imageurl: Assets.test_image,
-                    height: 240,
-                    width: 160,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ShowPoster(
+                      Imageurl: Assets.test_image,
+                      height: 240,
+                      width: 160,
+                    ),
                   ),
                 ],
               );
