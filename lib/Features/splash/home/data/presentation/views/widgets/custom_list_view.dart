@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/show_poster.dart';
 import 'package:bookly_app/core/utls/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -34,32 +35,6 @@ class ViewInRow extends StatelessWidget {
               );
             },
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class ShowPoster extends StatelessWidget {
-  ShowPoster({
-    super.key,
-    required this.Imageurl,
-    required this.height,
-    required this.width,
-  });
-  String? Imageurl;
-  final double width;
-  final double height;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(Imageurl!), fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(18),
         ),
       ),
     );
