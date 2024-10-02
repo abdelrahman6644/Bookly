@@ -26,7 +26,6 @@ class BestSellerItem extends StatelessWidget {
             ShowPoster(
               Imageurl: Assets.test_image,
               height: 125,
-              width: 80,
             ),
             const SizedBox(
               height: 20,

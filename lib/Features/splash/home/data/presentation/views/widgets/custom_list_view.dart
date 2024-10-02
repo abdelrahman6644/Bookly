@@ -1,6 +1,8 @@
 import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/show_poster.dart';
+import 'package:bookly_app/core/utls/app_router.dart';
 import 'package:bookly_app/core/utls/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ViewInRow extends StatelessWidget {
   const ViewInRow({
@@ -21,17 +23,17 @@ class ViewInRow extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 6,
             itemBuilder: (context, index) {
-              return Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: ShowPoster(
-                      Imageurl: Assets.test_image,
-                      height: 240,
-                      width: 160,
-                    ),
+              return GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kBookView);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: ShowPoster(
+                    Imageurl: Assets.test_image,
+                    height: 240,
                   ),
-                ],
+                ),
               );
             },
           ),
