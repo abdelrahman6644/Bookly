@@ -10,9 +10,8 @@ class ShowPoster extends StatelessWidget {
   final double height;
   @override
   Widget build(BuildContext context) {
-
     return AspectRatio(
-      aspectRatio: 2.7/4,
+      aspectRatio: 2.4 / 4,
       child: Container(
         height: height,
         decoration: BoxDecoration(

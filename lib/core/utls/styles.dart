@@ -24,5 +24,6 @@ abstract class Styles {
   static const titleStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
+    
   );
 }

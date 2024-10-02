@@ -2,42 +2,37 @@ import 'package:bookly_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class PriceAndRatingBook extends StatelessWidget {
-  const PriceAndRatingBook({
+class RatingBook extends StatelessWidget {
+  const RatingBook({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '19.99 \$',
-          style: Styles.titleStyle20
-              .copyWith(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(
-          width: 35,
-        ),
-        const Icon(
+        Icon(
           FontAwesomeIcons.solidStar,
           size: 20,
           color: Colors.yellow,
         ),
-        const SizedBox(
-          width: 7,
-        ),
-        const Text(
-          '4.5',
-          style: Styles.titleStyle16,
-        ),
-        const SizedBox(
+        SizedBox(
           width: 7,
         ),
         Text(
-          '(2324)',
-          style: Styles.titleStyle14
-              .copyWith(color: Colors.grey),
+          '4.5',
+          style: Styles.titleStyle16,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Opacity(
+          opacity: 0.5,
+          child: Text(
+            '(2324)',
+            style: Styles.titleStyle14,
+          ),
         ),
       ],
     );

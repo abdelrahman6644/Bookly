@@ -30,20 +30,32 @@ class BestSellerItem extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 30),
               child: Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BookTitle(),
-                    SizedBox(height: 3),
-                    Text(
+                    const BookTitle(),
+                    const SizedBox(height: 3),
+                    const Text(
                       'J.K. Rowling',
                       style: Styles.titleStyle14,
                     ),
-                    SizedBox(height: 3),
-                    PriceAndRatingBook()
+                    const SizedBox(height: 3),
+                    Row(
+                      children: [
+                        Text(
+                          '19.99 \$',
+                          style: Styles.titleStyle20
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          width: 35,
+                        ),
+                        const RatingBook(),
+                      ],
+                    )
                   ],
                 ),
               ),
