@@ -1,21 +1,19 @@
 class SaleInfo {
-    Country country;
-    Saleability saleability;
-    bool isEbook;
-    String buyLink;
+  final String country;
+  final String saleability;
+  final bool isEbook;
 
-    SaleInfo({
-        required this.country,
-        required this.saleability,
-        required this.isEbook,
-        required this.buyLink,
-    });
+  SaleInfo({
+    required this.country,
+    required this.saleability,
+    required this.isEbook,
+  });
 
+  factory SaleInfo.fromJson(Map<String, dynamic> json) {
+    return SaleInfo(
+      country: json['country'] ?? '',
+      saleability: json['saleability'] ?? '',
+      isEbook: json['isEbook'] ?? false,
+    );
+  }
 }
-enum Country {
-    EG
-}
-enum Saleability {
-    FREE
-}
-

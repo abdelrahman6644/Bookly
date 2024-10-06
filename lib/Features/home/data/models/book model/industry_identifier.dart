@@ -1,14 +1,16 @@
-
 class IndustryIdentifier {
-    Type type;
-    String identifier;
+  final String type;
+  final String identifier;
 
-    IndustryIdentifier({
-        required this.type,
-        required this.identifier,
-    });
+  IndustryIdentifier({
+    required this.type,
+    required this.identifier,
+  });
 
-}
-enum Type {
-    OTHER
+  factory IndustryIdentifier.fromJson(Map<String, dynamic> json) {
+    return IndustryIdentifier(
+      type: json['type'] ?? '',
+      identifier: json['identifier'] ?? '',
+    );
+  }
 }

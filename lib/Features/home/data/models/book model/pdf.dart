@@ -1,14 +1,15 @@
-class Epub {
+
+class Pdf {
     bool isAvailable;
     String? downloadLink;
 
-    Epub({
+    Pdf({
         required this.isAvailable,
         this.downloadLink,
     });
 
-factory Epub.fromJson(Map<String, dynamic> json) {
-    return Epub(
+factory Pdf.fromJson(Map<String, dynamic> json) {
+    return Pdf(
       isAvailable: json['isAvailable'] ?? false,
       downloadLink: json['isAvailable'] == false ? "" : json['downloadLink'] ?? "",
     );
