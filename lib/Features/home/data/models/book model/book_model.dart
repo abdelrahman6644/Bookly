@@ -1,6 +1,6 @@
-import 'package:bookly_app/Features/home/data/models/access_info.dart';
-import 'package:bookly_app/Features/home/data/models/sale_info.dart';
-import 'package:bookly_app/Features/home/data/models/volume_info.dart';
+import 'package:bookly_app/Features/home/data/Models/access_info.dart';
+import 'package:bookly_app/Features/home/data/Models/volume_info.dart';
+import 'package:bookly_app/Features/home/data/models/book%20model/sale_info.dart';
 
 class BookModel {
     String kind;
