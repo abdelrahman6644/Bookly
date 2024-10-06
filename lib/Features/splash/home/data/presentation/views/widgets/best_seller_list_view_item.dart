@@ -18,28 +18,9 @@ class BestSellerListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
-              child: BestSellerItem(),
+              child: BookListViewItem(),
             );
           }),
-    );
-  }
-}
-
-class BookTitle extends StatelessWidget {
-  const BookTitle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width / 2,
-      child: Text(
-        "Harry Potter and the Golbet of Fire",
-        style: Styles.titleStyle20.copyWith(fontFamily: kGtSectraFine),
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
-      ),
     );
   }
 }

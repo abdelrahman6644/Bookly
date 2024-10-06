@@ -1,5 +1,4 @@
-import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/best_seller_list_view_item.dart';
-import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/custom_list_view.dart';
+import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/book_title.dart';
 import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/price_and_rating_book.dart';
 import 'package:bookly_app/Features/splash/home/data/presentation/views/widgets/show_poster.dart';
 import 'package:bookly_app/core/utls/app_router.dart';
@@ -8,8 +7,8 @@ import 'package:bookly_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({
     super.key,
   });
 
