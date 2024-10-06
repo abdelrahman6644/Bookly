@@ -1,6 +1,6 @@
-import 'package:bookly_app/Features/home/data/Models/image_links.dart';
-import 'package:bookly_app/Features/home/data/Models/panelization_summary.dart';
-import 'package:bookly_app/Features/home/data/Models/reading_modes.dart';
+import 'package:bookly_app/Features/home/data/models/book%20model/image_links.dart';
+import 'package:bookly_app/Features/home/data/models/book%20model/panelization_summary.dart';
+import 'package:bookly_app/Features/home/data/models/book%20model/reading_modes.dart';
 import 'package:bookly_app/Features/home/data/models/industry_identifier.dart';
 
 class VolumeInfo {
