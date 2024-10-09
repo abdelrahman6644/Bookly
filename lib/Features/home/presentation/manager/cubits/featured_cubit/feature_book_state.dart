@@ -7,10 +7,10 @@ final class FeatureBookInitial extends FeatureBookState {}
 
 final class FeatureBookLoading extends FeatureBookState {}
 
-final class FeatureBookSuCcess extends FeatureBookState {
+final class FeatureBookSuccess extends FeatureBookState {
   final List<BookModel> books;
 
-  FeatureBookSuCcess({required this.books});
+  FeatureBookSuccess({required this.books});
 }
 
 final class FeatureBookFailure extends FeatureBookState {
