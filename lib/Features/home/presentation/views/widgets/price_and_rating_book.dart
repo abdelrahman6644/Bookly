@@ -1,36 +1,27 @@
 import 'package:bookly_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class RatingBook extends StatelessWidget {
-  const RatingBook({
-    super.key,
-  });
-
+class YearPulplishedAndPages extends StatelessWidget {
+  const YearPulplishedAndPages(
+      {super.key, required this.yearPublished, required this.bookPages});
+  final String yearPublished;
+  final int bookPages;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(
-          FontAwesomeIcons.solidStar,
-          size: 20,
-          color: Colors.yellow,
-        ),
-        SizedBox(
-          width: 7,
-        ),
         Text(
-          '4.5',
+          yearPublished,
           style: Styles.titleStyle16,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Opacity(
           opacity: 0.5,
           child: Text(
-            '(2324)',
+            '($bookPages)',
             style: Styles.titleStyle14,
           ),
         ),

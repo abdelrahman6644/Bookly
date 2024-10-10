@@ -34,7 +34,9 @@ class BookListViewItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const BookTitle(),
+                    BookTitle(
+                      bookTitle: 'Test only now',
+                    ),
                     const SizedBox(height: 3),
                     const Text(
                       'J.K. Rowling',
@@ -51,7 +53,7 @@ class BookListViewItem extends StatelessWidget {
                         const SizedBox(
                           width: 35,
                         ),
-                        const RatingBook(),
+                        const YearPulplishedAndPages(yearPublished: '', bookPages: 11,),
                       ],
                     )
                   ],
