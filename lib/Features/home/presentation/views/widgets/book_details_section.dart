@@ -16,7 +16,6 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * 0.20),
           child: ShowPoster(
             Imageurl: Assets.test_image,
-            height: 0,
           ),
         ),
         const SizedBox(

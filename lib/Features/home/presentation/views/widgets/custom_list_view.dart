@@ -19,43 +19,41 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
   // late var feature;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FeatureBookCubit, FeatureBookState>(
-      builder: (context, state) {
-        if (state is FeatureBookSuccess) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 30, top: 8),
-            child: SizedBox(
-              height: 240,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.zero,
-                scrollDirection: Axis.horizontal,
-                itemCount: state.books.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.kBookView);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: ShowPoster(
-                        Imageurl: state.books[index].thumbnail,
-                        height: 240,
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 30, top: 8),
+        child: SizedBox(
+          height: 240,
+          child: BlocBuilder<FeatureBookCubit, FeatureBookState>(
+            builder: (context, state) {
+              if (state is FeatureBookSuccess) {
+                return ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.zero,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: state.books.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.kBookView);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: ShowPoster(
+                          Imageurl: state.books[index].thumbnail,
+                        ),
                       ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          );
-        } else if (state is FeatureBookFailure) {
-          return ErrorMessage(
-            errorMessage: state.errorMessage,
-          );
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
-      },
-    );
+                    );
+                  },
+                );
+              } else if (state is FeatureBookFailure) {
+                return ErrorMessage(
+                  errorMessage: state.errorMessage,
+                );
+              } else {
+                return const Center(child: CircularProgressIndicator());
+              }
+            },
+          ),
+        ));
   }
 }

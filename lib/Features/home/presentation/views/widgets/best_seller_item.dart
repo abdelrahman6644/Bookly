@@ -24,7 +24,6 @@ class BookListViewItem extends StatelessWidget {
           children: [
             ShowPoster(
               Imageurl: Assets.test_image,
-              height: 125,
             ),
             const SizedBox(
               height: 20,

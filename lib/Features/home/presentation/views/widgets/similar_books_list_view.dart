@@ -27,7 +27,6 @@ class SimilarBooksListView extends StatelessWidget {
                 padding: EdgeInsets.only(left: index == 0 ? 30 : 10),
                 child: ShowPoster(
                   Imageurl: Assets.test_image,
-                  height: 130,
                 ),
               ),
             );
