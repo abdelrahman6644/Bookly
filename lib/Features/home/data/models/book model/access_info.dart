@@ -2,15 +2,15 @@ import 'package:bookly_app/Features/home/data/models/book%20model/epub.dart';
 import 'package:bookly_app/Features/home/data/models/book%20model/pdf.dart';
 
 class AccessInfo {
-  Country country;
-  Viewability viewability;
+  String country;
+  String viewability;
   bool embeddable;
   bool publicDomain;
-  TextToSpeechPermission textToSpeechPermission;
+  String textToSpeechPermission;
   Epub epub;
   Pdf pdf;
   String webReaderLink;
-  AccessViewStatus accessViewStatus;
+  String accessViewStatus;
   bool quoteSharingAllowed;
 
   AccessInfo({
@@ -40,11 +40,3 @@ class AccessInfo {
     );
   }
 }
-
-enum Country { EG }
-
-enum AccessViewStatus { FULL_PUBLIC_DOMAIN }
-
-enum TextToSpeechPermission { ALLOWED }
-
-enum Viewability { ALL_PAGES }

@@ -14,15 +14,15 @@ class HomeRepoImpl extends HomeRepo {
       var data = await _apiService.get(
           endPoint: '&Sorting=newest&q=subject:programming');
       List<BookModel> books = [];
-      data['items'].forEach((element) {
-        books.add(BookModel.fromJson(element));
-      });
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        return left(SeverFilure.fromDioException(e));
+        return left(ServerFailure.fromDioException(e));
       }
-      return left(SeverFilure(errorMessage: e.toString()));
+      return left(ServerFailure(errorMessage: e.toString()));
     }
   }
 
@@ -31,15 +31,16 @@ class HomeRepoImpl extends HomeRepo {
     try {
       var data = await _apiService.get(endPoint: '&q=subject:programming');
       List<BookModel> books = [];
-      data['items'].forEach((element) {
-        books.add(BookModel.fromJson(element));
-      });
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        return left(SeverFilure.fromDioException(e));
+        return left(ServerFailure.fromDioException(e));
       }
-      return left(SeverFilure(errorMessage: e.toString()));
+      return left(ServerFailure(errorMessage: e.toString()));
     }
   }
 }

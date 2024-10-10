@@ -30,7 +30,7 @@ class BookListViewItem extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 30),
+              padding: const EdgeInsets.only(left: 30),
               child: Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

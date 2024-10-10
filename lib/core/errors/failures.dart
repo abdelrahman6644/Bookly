@@ -6,33 +6,33 @@ abstract class Failures {
   Failures({required this.errorMessage});
 }
 
-class SeverFilure extends Failures {
-  SeverFilure({required super.errorMessage});
-  factory SeverFilure.fromDioException(DioException dioException) {
+class ServerFailure extends Failures {
+  ServerFailure({required super.errorMessage});
+  factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
-        return SeverFilure(errorMessage: "Connection timed out");
+        return ServerFailure(errorMessage: "Connection timed out");
       case DioExceptionType.sendTimeout:
-        return SeverFilure(errorMessage: "send  timed out");
+        return ServerFailure(errorMessage: "send  timed out");
       case DioExceptionType.receiveTimeout:
-        return SeverFilure(errorMessage: "receivee timed out");
+        return ServerFailure(errorMessage: "receivee timed out");
       case DioExceptionType.badCertificate:
-        return SeverFilure(errorMessage: "Request was bad Certificate");
+        return ServerFailure(errorMessage: "Request was bad Certificate");
       case DioExceptionType.badResponse:
-        return SeverFilure(errorMessage: "Bad Response");
+        return ServerFailure(errorMessage: "Bad Response");
       case DioExceptionType.cancel:
-        return SeverFilure(errorMessage: "Connection Cancel");
+        return ServerFailure(errorMessage: "Connection Cancel");
       case DioExceptionType.connectionError:
-        return SeverFilure(errorMessage: "Connection Error");
+        return ServerFailure(errorMessage: "Connection Error");
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {
-          return SeverFilure(errorMessage: "No Internet Connection");
+          return ServerFailure(errorMessage: "No Internet Connection");
         } else {
-          return SeverFilure(
+          return ServerFailure(
               errorMessage: "Unexpected Error, Please try again Later");
         }
     default:
-     return SeverFilure(
+     return ServerFailure(
               errorMessage: "Unexpected Error, Please try again Later");
     }
   }
